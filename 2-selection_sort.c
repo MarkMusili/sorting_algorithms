@@ -20,11 +20,12 @@ void selection_sort(int *array, size_t size)
 
 		for (j = i + 1 ; j < size ; j++)
 			idx = j;
+			
+		if (&array[idx] != &array[i])
+		{
+			swap(&array[idx], &array[i]);
+			print_array(array, size);
+		}
 	}
 
-	if (&array[idx] != &array[i])
-	{
-		swap(&array[idx], &array[i]);
-		print_array(array, size);
-	}
 }
