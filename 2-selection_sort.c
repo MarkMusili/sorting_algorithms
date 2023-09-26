@@ -1,4 +1,5 @@
 #include "sort.h"
+#include "swap.c"
 
 /**
  * selection_sort - The selection sort algorithm
@@ -8,7 +9,6 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	int temp;
 	size_t i, j, idx;
 
 	if (array == NULL || size <= 2)
@@ -24,9 +24,7 @@ void selection_sort(int *array, size_t size)
 				idx = j;
 		}
 
-		temp = array[i];
-		array[i] = array[idx];
-		array[idx] = temp;
+		swap(&array[i], &array[idx]);
 		print_array(array, size);
 	}
 }
