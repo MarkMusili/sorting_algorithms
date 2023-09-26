@@ -32,7 +32,7 @@ void insertion_sort_list(listint_t **list)
 			else
 				temp->prev->next = temp;
 
-			print_list(list);
+			print_list(&list);
 		}
 		current = current->next;
 	}
