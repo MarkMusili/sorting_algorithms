@@ -12,19 +12,19 @@ void selection_sort(int *array, size_t size)
 	size_t i, j, idx;
 
 	if (array == NULL || size < 2)
-		return; /* Nothing to sort */
+		return;
 
-	for (i = 0; i < size - 1; i++)
+	for (i = 0 ; i < size ; i++)
 	{
 		idx = i;
 
-		for (j = i + 1; j < size; j++)
-		{
-			if (array[j] < array[idx])
-				idx = j;
-		}
+		for (j = i + 1 ; j < size ; j++)
+			idx = j;
+	}
 
-		swap(&array[i], &array[idx]);
+	if (&array[idx] != &array[i])
+	{
+		swap(&array[idx], &array[i]);
 		print_array(array, size);
 	}
 }
