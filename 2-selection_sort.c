@@ -11,7 +11,7 @@ void selection_sort(int *array, size_t size)
 	int idx, temp;
 	size_t i, j;
 
-	for (i = 0; size > 2 & i < size - 1; i++)
+	for (i = 0; size > 2 && i < size - 1; i++)
 	{
 		idx = i;
 
