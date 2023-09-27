@@ -12,18 +12,18 @@ void quick_sort(int *array, size_t size)
 	if (array == NULL || size <= 1)
 		return;
 
-	quick_sort_recursive(array, 0, size - 1, size);
+	quick_s_r(array, 0, size - 1, size);
 }
 
 /**
- * quick_sort_recursive - Recursive function for custom quicksort
+ * quick_s_r - Recursive function for custom quicksort
  *
  * @array: Pointer to the input array
  * @start: The stating index of the subarray
  * @end: the ending index of the subarray
  * @size: Number of elements in @array
  */
-void quick_sort_recursive(int *array, ssize_t start, ssize_t end, ssize_t size)
+void quick_s_r(int *array, ssize_t start, ssize_t end, ssize_t size)
 {
 	ssize_t p_index;
 
@@ -31,8 +31,8 @@ void quick_sort_recursive(int *array, ssize_t start, ssize_t end, ssize_t size)
 	{
 		p_index = partition(array, start, end, size);
 
-		quick_sort_recursive(array, start, p_index - 1, size);
-		quick_sort_recursive(array, p_index + 1, end, size);
+		quick_s_r(array, start, p_index - 1, size);
+		quick_s_r(array, p_index + 1, end, size);
 	}
 }
 
