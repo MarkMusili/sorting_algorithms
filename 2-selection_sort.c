@@ -1,5 +1,4 @@
 #include "sort.h"
-#include "swap.c"
 
 /**
  * selection_sort - The selection sort algorithm
@@ -9,23 +8,22 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, idx;
+	int idx, temp;
+	size_t i, j;
 
-	if (array == NULL || size < 2)
-		return;
-
-	for (i = 0 ; i < size ; i++)
+	for (i = 0; i < size - 1; i++)
 	{
 		idx = i;
 
-		for (j = i + 1 ; j < size ; j++)
-			idx = j;
-
-		if (&array[idx] != &array[i])
+		for (j = i + 1; j < size; j++)
 		{
-			swap(&array[idx], &array[i]);
-			print_array(array, size);
+			if (array[j] < array[idx])
+				idx = j;
 		}
-	}
 
+		temp = array[i];
+		array[i] = array[idx];
+		array[idx] = temp;
+		print_array(array, size);
+	}
 }
